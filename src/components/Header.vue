@@ -5,41 +5,55 @@
                 <i class="fa-brands fa-twitter twitter-icon"></i>
             </router-link>
         </div>
-        <div class="header-navigation">
-            <router-link class="header-nav-link" to="/">
-                <i class="fa-solid fa-house"></i>
-                <div>Home</div>
-            </router-link>
-            <router-link class="header-nav-link" to="/">
-                <i class="fa-regular fa-hashtag"></i>
-                <div>Explore</div>
-            </router-link>
-            <router-link class="header-nav-link" to="/">
-                <i class="fa-regular fa-bell"></i>
-                <div>Notifications</div>
-            </router-link>
-            <router-link class="header-nav-link" to="/">
-                <i class="fa-regular fa-envelope"></i>
-                <div>Messages</div>
-            </router-link>
-            <router-link class="header-nav-link" to="/">
-                <i class="fa-regular fa-bookmark"></i>
-                <div>Bookmarks</div>
-            </router-link>
-            <router-link class="header-nav-link" to="/">
-                <i class="fa-regular fa-rectangle-list"></i>
-                <div>Lists</div>
-            </router-link>
-            <router-link class="header-nav-link" to="/">
-                <i class="fa-regular fa-user"></i>
-                <div>Profile</div>
-            </router-link>
-            <router-link class="header-nav-link" to="/">
-                <i class="fa-solid fa-ellipsis more-icon"></i>
-                <div>More</div>
-            </router-link>
-            <div class="create-tweet">
-                Tweet
+        <div class="header-items flex-column-space-between-flex-start">
+            <div class="header-navigation">
+                <router-link class="header-nav-link" to="/">
+                    <i class="fa-solid fa-house"></i>
+                    <div>Home</div>
+                </router-link>
+                <router-link class="header-nav-link" to="/explore">
+                    <i class="fa-regular fa-hashtag"></i>
+                    <div>Explore</div>
+                </router-link>
+                <router-link class="header-nav-link" to="/notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <div>Notifications</div>
+                </router-link>
+                <router-link class="header-nav-link" to="/messages">
+                    <i class="fa-regular fa-envelope"></i>
+                    <div>Messages</div>
+                </router-link>
+                <router-link class="header-nav-link" to="/bookmarks">
+                    <i class="fa-regular fa-bookmark"></i>
+                    <div>Bookmarks</div>
+                </router-link>
+                <router-link class="header-nav-link" to="/">
+                    <i class="fa-regular fa-rectangle-list"></i>
+                    <div>Lists</div>
+                </router-link>
+                <router-link class="header-nav-link" to="/">
+                    <i class="fa-regular fa-user"></i>
+                    <div>Profile</div>
+                </router-link>
+                <router-link class="header-nav-link" to="/">
+                    <i class="fa-solid fa-ellipsis more-icon"></i>
+                    <div>More</div>
+                </router-link>
+                <div class="create-tweet">
+                    Tweet
+                </div>
+            </div>
+            <div class="profile-settings">
+                <div class="profile-info">
+                    <div class="user-pic-mini"></div>
+                    <div class="user-name-nickname">
+                        <div class="user-name">VOYAGER</div>
+                        <div class="user-nickname">@VugarSafarzada</div>
+                    </div>
+                </div>
+                <div class="profile-options">
+                    <i class="fa-solid fa-ellipsis more-icon"></i>
+                </div>
             </div>
         </div>
     </div>
@@ -70,9 +84,9 @@
         background-color: var(--color-main-blue-hover);
     }
 
-    .header-navigation {
+    .header-container {
         max-width: 200px;
-
+        height: 100%;
     }
 
     .header-navigation .header-nav-link {
@@ -114,7 +128,7 @@
     }
 
     .create-tweet {
-        margin-top: 30px;
+        margin-top: 15px;
         background-color: var(--color-main-blue);
         padding: 15px 20px;
         width: 200px;
@@ -131,6 +145,49 @@
     .create-tweet:hover {
         background-color: var(--color-main-blue);
         opacity: 0.9
+    }
+
+    .header-items{
+        height: 90%;
+    }
+
+    .profile-settings{
+        width: 130%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 10px;
+        cursor: pointer;
+    }
+
+    .profile-settings:hover {
+        background-color: var(--color-main-grey3);
+        border-radius: 30px;
+    }
+
+    .profile-settings .profile-info{
+        display: flex;
+        align-items: center;
+    }
+
+    .profile-settings .user-pic-mini{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--color-main-grey2);
+    }
+
+    .profile-settings .profile-info .user-name-nickname{
+        padding: 10px;
+    }
+
+    .profile-settings .profile-info .user-name-nickname .user-name{
+        font-family: TwitterChirpHeavy, sans-serif;
+    }
+
+    .profile-settings .profile-options{
+        padding-right: 20px;
+        cursor: pointer;
     }
 
 </style>

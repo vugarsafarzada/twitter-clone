@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import store from '@/store/index';
 
 Vue.use(VueRouter)
 
@@ -8,16 +8,36 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: function () {
+     return setPageRoute("Home");
+    }
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+    path: '/explore',
+    name: 'explore',
     component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+      return setPageRoute("Explore");
+    }
+  },
+  {
+    path: '/notifications',
+    name: 'notifications',
+    component: function () {
+      return setPageRoute("Notifications");
+    }
+  },
+  {
+    path: '/messages',
+    name: 'messages',
+    component: function () {
+      return setPageRoute("Messages");
+    }
+  },
+  {
+    path: '/bookmarks',
+    name: 'bookmarks',
+    component: function () {
+      return setPageRoute("Bookmarks");
     }
   }
 ]
@@ -27,3 +47,9 @@ const router = new VueRouter({
 })
 
 export default router
+
+function setPageRoute(value){
+  console.log(value);
+  store.commit('setPageTitle', `${value} / Twitter`)
+  return import(`../views/${value}View.vue`)
+}

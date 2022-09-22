@@ -5,7 +5,8 @@
     padding: 0;
     margin-block: 0;
     margin-inline: 0;
-    /*transition-duration: 0.4s;*/
+    color: var(--color-main-black);
+    transition-duration: 0.1s;
 }
 
 
@@ -131,5 +132,5 @@ a {
 .default-main-headers-height{
     height: 53px;
     width: 100%;
-    background-color: var(--color-main-grey);
+    background-color: var(--color-main-white);
 }

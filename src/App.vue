@@ -8,10 +8,12 @@
 
 <script>
     import MainLayout from "@/components/MainLayout";
-
+    import store from "@/store/index";
     export default {
         name:"App",
         components: {MainLayout},
+        created() {
+        }
     }
 </script>
 
