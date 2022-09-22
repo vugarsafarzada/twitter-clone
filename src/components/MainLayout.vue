@@ -27,12 +27,10 @@
 
 <style scoped>
     .main-layout {
-        background-color: red;
         height: 100vh;
         width: 1250px;
     }
     .main-layout > header {
-        background-color: #1D9BF0;
         width: 21%;
         height: 100%;
     }
