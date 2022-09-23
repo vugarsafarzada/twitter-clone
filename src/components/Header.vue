@@ -87,6 +87,7 @@
     .header-container {
         max-width: 200px;
         height: 100%;
+        position: fixed;
     }
 
     .header-navigation .header-nav-link {
@@ -174,11 +175,13 @@
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        background-color: var(--color-main-grey2);
+        background-color: var(--color-main-grey1);
     }
 
     .profile-settings .profile-info .user-name-nickname{
         padding: 10px;
+        color: var(--color-main-black1);
+        font-size: 14px;
     }
 
     .profile-settings .profile-info .user-name-nickname .user-name{

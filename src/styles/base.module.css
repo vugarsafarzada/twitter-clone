@@ -1,12 +1,17 @@
 :root {
     /* Colors */
     --color-main-black: #0F1419;
+    --color-main-black1: #536471;
     --color-main-blue: #1D9BF0;
     --color-main-blue-hover: rgba(29, 155, 240, 0.15);
     --color-main-white: #FFF;
     --color-main-grey: #EFF3F4;
+    --color-main-grey1: #F0F2F2;
     --color-main-grey2: #F7F9F9;
     --color-main-grey3: #E8E9E9;
+    --color-main-red: #F41928;
+    --color-main-red1: #F0DBDD;
+    --color-main-red2: #F7D6DA;
 
     /* Font Format */
     --font-size-default: 15px;

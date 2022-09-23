@@ -58,6 +58,7 @@
         background-color: var(--color-main-grey);
         height: 42px;
         border-radius: 30px;
+        width: 350px;
     }
 
     .searchbox-container .magnifying-icon {
