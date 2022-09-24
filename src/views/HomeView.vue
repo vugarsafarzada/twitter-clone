@@ -1,18 +1,17 @@
 <template>
   <div class="home">
-      <h3>Hone</h3>
-    <div v-for="i in 100" :key="i" style="margin-top: 30px">
-        {{i}} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquid dignissimos dolor eligendi esse nostrum saepe tempore ullam veniam voluptatum!
-    </div>
+      <CreateNewPost/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 
+import CreateNewPost from "@/components/CreateNewPost";
 export default {
   name: 'HomeView',
   components: {
+      CreateNewPost
   }
 }
 </script>

@@ -97,6 +97,13 @@ a {
     align-items: flex-start;
 }
 
+.flex-row-center-flex-start {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
 .flex-row-space-between-flex-start {
     display: flex;
     flex-direction: row;
@@ -123,6 +130,27 @@ a {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+}
+
+.flex-column-start-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flex-row-start-start {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.flex-column-start-start {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .box-shadow-inside {

@@ -57,15 +57,15 @@
         height: 190vh;
         border-left: 1px solid var(--color-main-grey3);
         border-right: 1px solid var(--color-main-grey3);
-        padding: 0 15px;
     }
 
     .main-layout > main .timeline .timeline-container{
         position: fixed;
-        width: 580px;
+        width: 610px;
         z-index: 1;
         background-color: rgba(255, 255, 255, 0.85);
         backdrop-filter: blur(5px);
+        padding: 0 15px;
     }
     .main-layout > main .timeline .main-container{
         width: 100%;

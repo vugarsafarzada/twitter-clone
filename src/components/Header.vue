@@ -45,7 +45,9 @@
             </div>
             <div class="profile-settings">
                 <div class="profile-info">
-                    <div class="user-pic-mini"></div>
+                    <div class="user-pic-mini">
+                        <img src="../assets/profile.jpg" alt="">
+                    </div>
                     <div class="user-name-nickname">
                         <div class="user-name">VOYAGER</div>
                         <div class="user-nickname">@VugarSafarzada</div>
@@ -171,7 +173,7 @@
         align-items: center;
     }
 
-    .profile-settings .user-pic-mini{
+    .profile-settings .user-pic-mini img{
         width: 40px;
         height: 40px;
         border-radius: 50%;

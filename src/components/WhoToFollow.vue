@@ -4,7 +4,7 @@
              v-for="list in followSuggestions" :key="list.name">
             <router-link :to="list.user_name" class="wtf-profile flex-row-start-center">
                 <div class="wtf-profile-pic">
-                    <img :src="list.profile_pic" alt="">
+                    <img :src="setImgSrc(list.profile_pic)" alt="">
                 </div>
                 <div class="wtf-details">
                     <div class="wtf-name">{{list.name}}</div>
@@ -44,14 +44,20 @@
                     {
                         name: "Elon Musk",
                         user_name: "elon_musk",
-                        profile_pic: null,
+                        profile_pic: "elon_musk.jpg",
 
                     },
-                    {name: "Jeff Bezos", user_name: "jeffBezos29", profile_pic: null}
+                    {
+                        name: "Jeff Bezos",
+                        user_name: "jeffBezos29",
+                        profile_pic: "jeffBezos29.jpg",
+                    }
                 ],
                 followed: [],
                 unfollowBtnHoverTrigger: null,
             }
+        },
+        computed:{
         },
         methods: {
             followRequest(id) {
@@ -63,6 +69,9 @@
                         this.followed.splice(index, 1);
                     }
                 }
+            },
+            setImgSrc(name){
+                return require(`../assets/${name}`)
             }
         }
     }
@@ -78,7 +87,8 @@
     .wtf-item:hover {
         background-color: var(--color-main-grey1);
     }
-    .wtf-profile{
+
+    .wtf-profile {
         width: 100%;
         margin: 0;
     }
@@ -123,8 +133,7 @@
     }
 
 
-
-    .wtf-item .wtf-profile .wtf-profile-pic {
+    .wtf-item .wtf-profile .wtf-profile-pic img {
         background-color: var(--color-main-grey3);
         border-radius: 50%;
         width: 40px;
