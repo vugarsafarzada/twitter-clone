@@ -46,7 +46,7 @@
             <div class="profile-settings">
                 <div class="profile-info">
                     <div class="user-pic-mini">
-                        <img src="../assets/profile.jpg" alt="">
+                        <img src="https://pbs.twimg.com/profile_images/1574086897818902528/k3GCX_vm_400x400.jpg" alt="">
                     </div>
                     <div class="user-name-nickname">
                         <div class="user-name">VOYAGER</div>
@@ -62,137 +62,136 @@
 </template>
 
 <script>
-    export default {
-        name: "Header"
-    }
+export default {
+    name: "Header"
+}
 </script>
 
 <style scoped>
-    .twitter-icon {
-        color: var(--color-main-blue);
-        font-size: 30px;
-    }
+.twitter-icon {
+    color: var(--color-main-blue);
+    font-size: 30px;
+}
 
-    .twitter-main-icon {
-        width: 30px;
-        height: 30px;
-        padding: 25px;
-        border-radius: 50%;
-        position: relative;
-        left: 10px;
-    }
+.twitter-main-icon {
+    width: 30px;
+    height: 30px;
+    padding: 25px;
+    border-radius: 50%;
+    position: relative;
+    left: 10px;
+}
 
-    .twitter-main-icon:hover {
-        background-color: var(--color-main-blue-hover);
-    }
+.twitter-main-icon:hover {
+    background-color: var(--color-main-blue-hover);
+}
 
-    .header-container {
-        max-width: 200px;
-        height: 100%;
-        position: fixed;
-    }
+.header-container {
+    max-width: 200px;
+    height: 100%;
+    position: fixed;
+}
 
-    .header-navigation .header-nav-link {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 15px;
+.header-navigation .header-nav-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px;
 
-    }
+}
 
-    .header-navigation .header-nav-link:hover {
-        background-color: var(--color-main-grey3);
-        border-radius: 30px;
-    }
+.header-navigation .header-nav-link:hover {
+    background-color: var(--color-main-grey3);
+    border-radius: 30px;
+}
 
-    .header-navigation .header-nav-link > div {
-        color: var(--color-main-black);
-        font-weight: 500;
-        font-size: 20px;
-        border-radius: 30px;
-    }
+.header-navigation .header-nav-link>div {
+    color: var(--color-main-black);
+    font-weight: 500;
+    font-size: 20px;
+    border-radius: 30px;
+}
 
-    .header-nav-link i {
-        color: var(--color-main-black);
-        font-size: 25px;
-        margin-right: 10px;
-        width: 30px;
-    }
+.header-nav-link i {
+    color: var(--color-main-black);
+    font-size: 25px;
+    margin-right: 10px;
+    width: 30px;
+}
 
-    .header-nav-link i.more-icon {
-        border: 2px solid var(--color-main-black);
-        border-radius: 50%;
-        font-size: 20px;
-        padding: 4px;
-        margin-right: 10px;
-        width: 30px;
+.header-nav-link i.more-icon {
+    border: 2px solid var(--color-main-black);
+    border-radius: 50%;
+    font-size: 20px;
+    padding: 4px;
+    margin-right: 10px;
+    width: 30px;
 
-    }
+}
 
-    .create-tweet {
-        margin-top: 15px;
-        background-color: var(--color-main-blue);
-        padding: 15px 20px;
-        width: 200px;
-        border-radius: 30px;
-        text-align: center;
-        color: var(--color-main-white);
-        font-weight: 800;
-        cursor: pointer;
-        position: relative;
-        left: 10px;
-    }
+.create-tweet {
+    margin-top: 15px;
+    background-color: var(--color-main-blue);
+    padding: 15px 20px;
+    width: 200px;
+    border-radius: 30px;
+    text-align: center;
+    color: var(--color-main-white);
+    font-weight: 800;
+    cursor: pointer;
+    position: relative;
+    left: 10px;
+}
 
 
-    .create-tweet:hover {
-        background-color: var(--color-main-blue);
-        opacity: 0.9
-    }
+.create-tweet:hover {
+    background-color: var(--color-main-blue);
+    opacity: 0.9
+}
 
-    .header-items{
-        height: 90%;
-    }
+.header-items {
+    height: 90%;
+}
 
-    .profile-settings{
-        width: 130%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-left: 10px;
-        cursor: pointer;
-    }
+.profile-settings {
+    width: 130%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    cursor: pointer;
+}
 
-    .profile-settings:hover {
-        background-color: var(--color-main-grey3);
-        border-radius: 30px;
-    }
+.profile-settings:hover {
+    background-color: var(--color-main-grey3);
+    border-radius: 30px;
+}
 
-    .profile-settings .profile-info{
-        display: flex;
-        align-items: center;
-    }
+.profile-settings .profile-info {
+    display: flex;
+    align-items: center;
+}
 
-    .profile-settings .user-pic-mini img{
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background-color: var(--color-main-grey1);
-    }
+.profile-settings .user-pic-mini img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-main-grey1);
+}
 
-    .profile-settings .profile-info .user-name-nickname{
-        padding: 10px;
-        color: var(--color-main-black1);
-        font-size: 14px;
-    }
+.profile-settings .profile-info .user-name-nickname {
+    padding: 10px;
+    color: var(--color-main-black1);
+    font-size: 14px;
+}
 
-    .profile-settings .profile-info .user-name-nickname .user-name{
-        font-family: TwitterChirpHeavy, sans-serif;
-    }
+.profile-settings .profile-info .user-name-nickname .user-name {
+    font-family: TwitterChirpHeavy, sans-serif;
+}
 
-    .profile-settings .profile-options{
-        padding-right: 20px;
-        cursor: pointer;
-    }
-
+.profile-settings .profile-options {
+    padding-right: 20px;
+    cursor: pointer;
+}
 </style>

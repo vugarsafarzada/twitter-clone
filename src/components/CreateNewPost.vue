@@ -1,51 +1,60 @@
 <template>
     <div class="cnp-container flex-row-start-start">
         <div class="profile-pic-section">
-            <img src="../assets/profile.jpg" alt="" class="profile-pic">
+            <img src="https://pbs.twimg.com/profile_images/1574086897818902528/k3GCX_vm_400x400.jpg" alt=""
+                class="profile-pic">
         </div>
         <div class="cnp-body">
-            <div class="cnp-audience-section flex-row-space-around-center">
+            <div v-if="textAreaFocusTrigger" class="cnp-audience-section flex-row-space-around-center">
                 Everyone <i class="fa-solid fa-angle-down"></i>
             </div>
             <div class="cnp-tools">
                 <div class="cnp-inp">
                     <label for="">
-                        <textarea @keypress="setTextareaRows" class="cnp-content" id="cnp-content" :rows='textAreaRows'
-                            :cols="textAreaColumns" v-model="contentText" placeholder="What's happening?">
-
+                        <textarea :maxlength="textAreaLengthLimit" id="cnp-content" class="cnp-content"
+                            @focusin="textAreaFocusTrigger = true" :rows='calculateTextAreaRows' :cols="textAreaColumns"
+                            v-model="contentText" placeholder="What's happening?">
                     </textarea>
                     </label>
                 </div>
-                <div class="cnp-who-can-reply">
-                    <span>
-                        <!--TODO: create a dropdown for it-->
+                <div class="cnp-who-can-reply" v-if="textAreaFocusTrigger">
+                    <!--TODO: Create a dropdown for it-->
+                    <button>
                         <i class="fa-solid fa-earth-americas"></i>
                         Everyone can reply
-                    </span>
+                    </button>
                 </div>
                 <div class="cnp-publish flex-row-space-between-center">
                     <div class="cnp-add-media flex-row-space-between-center">
-                        <div class="media-item">
+                        <div class="media-item" title="Media">
                             <i class="fa-regular fa-image"></i>
                         </div>
-                        <div class="media-item">
-                            <i class="fa-brands fa-square-git"></i>
+                        <div class="media-item" title="GIF">
+                            <div class="gif-icon flex-row-center-center">
+                                GIF
+                            </div>
                         </div>
-                        <div class="media-item">
-                            <i class="fa-regular fa-square-poll-horizontal"></i>
+                        <div class="media-item" title="Poll">
+                            <i class="fa-solid fa-square-poll-horizontal"></i>
                         </div>
-                        <div class="media-item">
+                        <div class="media-item" title="Emoji">
                             <i class="fa-regular fa-face-smile"></i>
                         </div>
-                        <div class="media-item">
+                        <div class="media-item" title="Schedule">
                             <i class="fa-regular fa-calendar-check"></i>
                         </div>
-                        <div class="media-item">
-                            <i class="fa-regular fa-location-dot"></i>
+                        <div class="media-item" title="Location">
+                            <i class="fa-solid fa-location-dot"></i>
                         </div>
                     </div>
-                    <div class="cnp-tweet-btn">
-                        Tweet
+                    <!--TODO: Button shouldn't click if content text length is 0 -->
+                    <div class="cnp-share-section flex-row-center-center">
+                        <div class="cnp-text-limit" v-if="calculateContentTextLength">
+                            {{calculateContentTextLength}} / {{textAreaLengthLimit}}
+                        </div>
+                        <button class="cnp-tweet-btn" :class="{'disable-btn' : !calculateContentTextLength }">
+                            Tweet
+                        </button>
                     </div>
                 </div>
             </div>
@@ -58,39 +67,27 @@ export default {
     name: "CreateNewPost",
     data() {
         return {
-            textAreaRows: 1,
             textAreaColumns: 50,
-            textAreaColumnsLimit: 50,
-            contentText: ""
+            textAreaFocusTrigger: false,
+            textAreaLengthLimit: 280,
+            contentText: "",
         }
     },
     methods: {
-        setTextareaRows(e) {
-            if (e.key === "Enter" && this.textAreaRows < 20) {
-                this.textAreaRows++;
-            }
-            if (e.key === "Backspace" && this.textAreaRows > 1) {
-                this.textAreaRows--;
-            }
-        },
     },
-    watch: {
-        contentText(newVal, oldVal) {
-            if (newVal.length < oldVal.length) {
-                const rows = Number(this.contentText.length) / this.textAreaColumnsLimit;
-                console.log('0', rows)
-                if (rows > 1) {
-                    console.log('1')
-                    this.setTextareaRows({
-                        key: 'Backspace'
-                    });
-                }
+    computed: {
+        calculateContentTextLength() {
+            return this.contentText.trim().length;
+        },
+        calculateTextAreaRows() {
+            if (!this.contentText.length) {
+                return 1;
             }
-            if (!newVal.length) {
-                this.textAreaRows = 1;
-            }
+            const newLines = this.contentText.split('\n').length;
+            return Number((this.contentText.length / 45).toFixed(0)) + newLines;
         }
-    }
+
+    },
 }
 </script>
 
@@ -123,25 +120,30 @@ export default {
 }
 
 .cnp-container .cnp-body .cnp-audience-section,
-.cnp-who-can-reply>span,
-i {
+.cnp-who-can-reply>button {
     color: var(--color-main-blue);
     font-weight: bolder;
     font-size: 14px;
 }
 
+.cnp-container .cnp-body i {
+    color: var(--color-main-blue);
+}
+
 .cnp-container .cnp-body .cnp-tools .cnp-inp .cnp-content {
     font-size: 20px;
     outline: none;
-    margin: 0 5px;
+    margin: 10px 5px;
+    resize: none;
 }
 
 .cnp-container .cnp-body .cnp-who-can-reply {
-    padding: 15px 7px;
+    border-bottom: 1px solid var(--color-main-grey3);
+    padding: 10px 7px 15px 5px;
     cursor: pointer;
 }
 
-.cnp-container .cnp-body .cnp-who-can-reply span {
+.cnp-container .cnp-body .cnp-who-can-reply button {
     width: 170px;
     text-align: center;
     display: inline-block;
@@ -151,22 +153,20 @@ i {
     right: 15px;
 }
 
-.cnp-container .cnp-body .cnp-who-can-reply span:hover {
+.cnp-container .cnp-body .cnp-who-can-reply button:hover {
     background-color: var(--color-main-blue-hover);
 }
 
 .cnp-container .cnp-tools .cnp-publish {
-    border-top: 1px solid var(--color-main-grey3);
     padding: 10px 7px;
 }
 
 .cnp-container .cnp-tools .cnp-publish .cnp-tweet-btn {
     background-color: var(--color-main-blue);
-    padding: 10px 15px;
+    padding: 8px 15px;
     border-radius: 30px;
     text-align: center;
     color: var(--color-main-white);
-    opacity: 0.5;
     font-weight: 800;
     cursor: pointer;
     position: relative;
@@ -174,17 +174,45 @@ i {
     margin-right: 10px;
 }
 
-.cnp-container .cnp-tools .cnp-publish .cnp-tweet-btn:hover {
-    background-color: var(--color-main-blue);
-    opacity: 0.9
+.cnp-container .cnp-tools .cnp-publish .cnp-tweet-btn.disable-btn {
+    opacity: 0.5;
+    cursor: default;
 }
 
 .cnp-container .cnp-tools .cnp-publish .cnp-add-media {
-    width: 200px;
+    width: 210px;
+    position: relative;
+    right: 8px;
 }
 
-.cnp-container .cnp-tools .cnp-publish .cnp-add-media .media-item i {
+.cnp-container .cnp-tools .cnp-publish .cnp-add-media .media-item i,
+.gif-icon {
     font-size: 18px;
     cursor: pointer;
+}
+
+.cnp-container .cnp-tools .cnp-publish .cnp-share-section .cnp-text-limit {
+    color: var(--color-main-blue);
+    font-weight: bolder;
+    font-size: 11px;
+}
+
+.cnp-container .cnp-add-media .media-item .gif-icon {
+    font-size: 8px;
+    width: 20px;
+    height: 17px;
+    font-family: TwitterChirpHeavy, sans-serif;
+    border: 2px solid var(--color-main-blue);
+    color: var(--color-main-blue);
+    border-radius: 2.5px;
+}
+
+.cnp-container .cnp-add-media .media-item {
+    padding: 8px;
+    border-radius: 50%;
+}
+
+.cnp-container .cnp-add-media .media-item:hover {
+    background-color: var(--color-main-blue-hover);
 }
 </style>
