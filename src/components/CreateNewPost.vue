@@ -2,7 +2,7 @@
     <div class="cnp-container flex-row-start-start">
         <div class="profile-pic-section">
             <img src="https://pbs.twimg.com/profile_images/1574086897818902528/k3GCX_vm_400x400.jpg" alt=""
-                class="profile-pic">
+                class="post-profile-pic">
         </div>
         <div class="cnp-body">
             <div v-if="textAreaFocusTrigger" class="cnp-audience-section flex-row-space-around-center">
@@ -30,7 +30,7 @@
                             <i class="fa-regular fa-image"></i>
                         </div>
                         <div class="media-item" title="GIF">
-                            <div class="gif-icon flex-row-center-center">
+                            <div class="text-heavy gif-icon flex-row-center-center">
                                 GIF
                             </div>
                         </div>
@@ -95,14 +95,6 @@ export default {
 .cnp-container {
     width: 616px;
     border-bottom: 1px solid var(--color-main-grey3);
-}
-
-.cnp-container .profile-pic-section img {
-    background-color: var(--color-main-grey3);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin: 0 15px;
 }
 
 .cnp-container .cnp-body .cnp-audience-section {
@@ -201,7 +193,6 @@ export default {
     font-size: 8px;
     width: 20px;
     height: 17px;
-    font-family: TwitterChirpHeavy, sans-serif;
     border: 2px solid var(--color-main-blue);
     color: var(--color-main-blue);
     border-radius: 2.5px;

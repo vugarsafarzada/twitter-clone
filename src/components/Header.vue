@@ -9,7 +9,7 @@
             <div class="header-navigation">
                 <router-link class="header-nav-link" to="/">
                     <i class="fa-solid fa-house"></i>
-                    <div>Home</div>
+                    <div class="selected">Home</div>
                 </router-link>
                 <router-link class="header-nav-link" to="/explore">
                     <i class="fa-regular fa-hashtag"></i>
@@ -49,7 +49,7 @@
                         <img src="https://pbs.twimg.com/profile_images/1574086897818902528/k3GCX_vm_400x400.jpg" alt="">
                     </div>
                     <div class="user-name-nickname">
-                        <div class="user-name">VOYAGER</div>
+                        <div class="user-name text-heavy">VOYAGER</div>
                         <div class="user-nickname">@VugarSafarzada</div>
                     </div>
                 </div>
@@ -99,6 +99,10 @@ export default {
     align-items: center;
     padding: 15px;
 
+}
+
+.header-navigation .header-nav-link .selected {
+    font-weight: bolder;
 }
 
 .header-navigation .header-nav-link:hover {
@@ -184,10 +188,6 @@ export default {
     padding: 10px;
     color: var(--color-main-black1);
     font-size: 14px;
-}
-
-.profile-settings .profile-info .user-name-nickname .user-name {
-    font-family: TwitterChirpHeavy, sans-serif;
 }
 
 .profile-settings .profile-options {

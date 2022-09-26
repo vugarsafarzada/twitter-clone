@@ -1,5 +1,4 @@
 @import "./base.module.css";
-
 * {
     margin: 0 auto;
     padding: 0;
@@ -8,7 +7,6 @@
     color: var(--color-main-black);
     transition-duration: 0.1s;
 }
-
 
 body {
     font-family: 'TwitterChirp', serif;
@@ -30,11 +28,16 @@ a {
 }
 
 .no-select {
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Old versions of Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
     user-select: none;
 }
 
@@ -42,7 +45,6 @@ a {
     .hide-on-mobile {
         display: none !important;
     }
-
     #app .page-container {
         padding: 0;
     }
@@ -157,8 +159,24 @@ a {
     box-shadow: rgba(50, 50, 93, 0.25) 0 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0 18px 36px -18px inset;
 }
 
-.default-main-headers-height{
+.default-main-headers-height {
     height: 53px;
     width: 100%;
     background-color: var(--color-main-white);
+}
+
+.post-profile-pic {
+    background-color: var(--color-main-grey3);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0 15px;
+}
+
+.post-profile-pic:hover {
+    opacity: 0.7;
+}
+
+.text-heavy {
+    font-family: TwitterChirpHeavy, sans-serif;
 }
