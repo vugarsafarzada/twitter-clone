@@ -46,9 +46,9 @@
             <div class="profile-settings">
                 <div class="profile-info">
                     <div class="user-pic-mini">
-                        <img src="https://pbs.twimg.com/profile_images/1574086897818902528/k3GCX_vm_400x400.jpg" alt="">
+                        <img src="../assets/profile.jpg" alt="">
                     </div>
-                    <div class="user-name-nickname">
+                    <div class=" user-name-nickname">
                         <div class="user-name text-heavy">VOYAGER</div>
                         <div class="user-nickname">@VugarSafarzada</div>
                     </div>

@@ -1,8 +1,7 @@
 <template>
     <div class="cnp-container flex-row-start-start">
         <div class="profile-pic-section">
-            <img src="https://pbs.twimg.com/profile_images/1574086897818902528/k3GCX_vm_400x400.jpg" alt=""
-                class="post-profile-pic">
+            <img src="../assets/profile.jpg" alt="" class="post-profile-pic">
         </div>
         <div class="cnp-body">
             <div v-if="textAreaFocusTrigger" class="cnp-audience-section flex-row-space-around-center">

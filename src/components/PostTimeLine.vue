@@ -1,16 +1,6 @@
 <template>
     <div>
-        <TweetPost v-for="post in data" :post="post" :key="post.id" />
-        <TweetPost v-for="post in data" :post="post" :key="post.id" />
-        <TweetPost v-for="post in data" :post="post" :key="post.id" />
-        <TweetPost v-for="post in data" :post="post" :key="post.id" />
-        <TweetPost v-for="post in data" :post="post" :key="post.id" />
-        <TweetPost v-for="post in data" :post="post" :key="post.id" />
-        <TweetPost v-for="post in data" :post="post" :key="post.id" />
-        <TweetPost v-for="post in data" :post="post" :key="post.id" />
-        <TweetPost v-for="post in data" :post="post" :key="post.id" />
-        <TweetPost v-for="post in data" :post="post" :key="post.id" />
-
+        <TweetPost v-for="(post, index) in data" :post="post" :key="index" />
     </div>
 </template>
 

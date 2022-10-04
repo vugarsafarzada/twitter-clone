@@ -1,7 +1,7 @@
 <template>
     <div class="post-container flex-row-start-start">
         <div class="post-profile-picture">
-            <img :src="post.author.profilePic" alt="" class="post-profile-pic">
+            <img :src="setImgSrc(post.author.profilePic)" alt="Profile picture" class="post-profile-pic">
         </div>
         <div class="post-body">
             <div class="post-info flex-row-space-between-center">
@@ -60,6 +60,11 @@ export default {
                 retweet: false,
                 comment: false,
             }
+        }
+    },
+    methods: {
+        setImgSrc(name) {
+            return require(`../assets/${name}`)
         }
     }
 }
