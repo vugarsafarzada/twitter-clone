@@ -1,35 +1,38 @@
 {
-  "name": "twitter-clone",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
-  },
-  "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.2.0",
-    "@fortawesome/fontawesome-svg-core": "^6.2.0",
-    "@fortawesome/free-brands-svg-icons": "^6.2.0",
-    "@fortawesome/free-regular-svg-icons": "^6.2.0",
-    "@fortawesome/free-solid-svg-icons": "^6.2.0",
-    "@fortawesome/vue-fontawesome": "^2.0.8",
-    "vue": "^2.6.14",
-    "vue-router": "^3.5.1",
-    "vuetify": "^2.6.0",
-    "vuex": "^3.6.2"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-router": "~5.0.0",
-    "@vue/cli-plugin-vuex": "~5.0.0",
-    "@vue/cli-service": "~5.0.0",
-    "sass": "^1.32.7",
-    "sass-loader": "^12.0.0",
-    "vue-cli-plugin-vuetify": "~2.5.8",
-    "vue-template-compiler": "^2.6.14"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+    "name": "twitter-clone",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "api": "node ./src/twitter-api.js"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^6.2.0",
+        "@fortawesome/fontawesome-svg-core": "^6.2.0",
+        "@fortawesome/free-brands-svg-icons": "^6.2.0",
+        "@fortawesome/free-regular-svg-icons": "^6.2.0",
+        "@fortawesome/free-solid-svg-icons": "^6.2.0",
+        "@fortawesome/vue-fontawesome": "^2.0.8",
+        "body-parser": "^1.20.0",
+        "dotenv": "^16.0.3",
+        "vue": "^2.6.14",
+        "vue-router": "^3.5.1",
+        "vuetify": "^2.6.0",
+        "vuex": "^3.6.2"
+    },
+    "devDependencies": {
+        "@vue/cli-plugin-router": "~5.0.0",
+        "@vue/cli-plugin-vuex": "~5.0.0",
+        "@vue/cli-service": "~5.0.0",
+        "sass": "^1.32.7",
+        "sass-loader": "^12.0.0",
+        "vue-cli-plugin-vuetify": "~2.5.8",
+        "vue-template-compiler": "^2.6.14"
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not dead"
+    ]
 }
