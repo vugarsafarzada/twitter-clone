@@ -10,6 +10,11 @@ npm install
 npm run serve
 ```
 
+### Run Node.js app and start API
+```
+npm run api
+```
+
 ### Compiles and minifies for production
 ```
 npm run build
