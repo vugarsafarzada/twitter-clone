@@ -8,6 +8,8 @@
 <script>
 import CreateNewPost from "@/components/CreateNewPost";
 import PostTimeLine from "@/components/PostTimeLine.vue";
+import store from "@/store/index";
+
 export default {
   name: 'HomeView',
   components: {
@@ -16,6 +18,14 @@ export default {
   data() {
     return {}
   },
+  computed: {
+    posts() {
+      return store.getters.getAllPosts;
+    }
+  },
+  mounted() {
+    store.commit('getAllPostsAPI');
+  }
 }
 </script>
 
