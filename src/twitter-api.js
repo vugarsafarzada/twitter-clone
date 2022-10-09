@@ -1,6 +1,10 @@
 const express = require("express");
 const app = express();
 const postRouter = require("./api_routes/post-router");
+const userRouter = require("./api_routes/user-router");
+const tfyRouter = require("./api_routes/tfy-router");
+const wtfRouter = require("./api_routes/wtf-router");
+
 require("dotenv").config({ path: "./.env" });
 const port = process.env.NODE_APP_PORT;
 const host = process.env.NODE_APP_HOST;
@@ -26,6 +30,9 @@ app.use((req, res, next) => {
 });
 
 app.use("/api/post", postRouter);
+app.use("/api/user", userRouter);
+app.use("/api/tfy", tfyRouter);
+app.use("/api/wtf", wtfRouter);
 
 app.listen(port, () => {
     console.clear();

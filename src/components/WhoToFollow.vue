@@ -26,30 +26,24 @@
 
 <script>
 import ListCard from "@/components/ListCard";
+import store from '@/store/index';
 
 export default {
     name: "WhoToFollow",
     components: { ListCard },
     data() {
         return {
-            followSuggestions: [
-                {
-                    name: "Elon Musk",
-                    user_name: "elon_musk",
-                    profile_pic: "elon_musk.jpg",
-
-                },
-                {
-                    name: "Jeff Bezos",
-                    user_name: "jeffBezos29",
-                    profile_pic: "jeffBezos29.jpg",
-                }
-            ],
             followed: [],
             unfollowBtnHoverTrigger: null,
         }
     },
     computed: {
+        followSuggestions() {
+            return store.state.allWtf;
+        }
+    },
+    mounted() {
+        store.commit('getAllWTF');
     },
     methods: {
         followRequest(id) {

@@ -16,75 +16,24 @@
 
 <script>
 import ListCard from "@/components/ListCard";
+import store from "@/store/index";
 
 export default {
     name: "TrendsForYou",
     components: { ListCard },
     data() {
         return {
-            tfyData: [
-                {
-                    subject: "Trending in Azerbaijan",
-                    name: "#National",
-                    tweets: 6055
 
-                },
-                {
-                    subject: "Trending",
-                    name: "Slava Ukraini",
-                    tweets: 62300
-
-                },
-                {
-                    subject: "Trending",
-                    name: "Grain",
-                    tweets: 2069
-
-                },
-                {
-                    subject: "Trending",
-                    name: "Ubuntu",
-                    tweets: 4291
-
-                },
-                {
-                    subject: "Trending",
-                    name: "Tubbo",
-                    tweets: 3476
-
-                },
-                {
-                    subject: "Trending",
-                    name: "OURPLE",
-                    tweets: 3378
-
-                },
-                {
-                    subject: "Trending",
-                    name: "Episode 6",
-                    tweets: 21000
-
-                },
-                {
-                    subject: "Trending",
-                    name: "President",
-                    tweets: 832000
-
-                },
-                {
-                    subject: "Trending",
-                    name: "Sony",
-                    tweets: 6055
-
-                },
-                {
-                    subject: "Trending",
-                    name: "#RANBOO",
-                    tweets: 6055
-
-                },
-            ]
         }
+    },
+    computed: {
+        tfyData() {
+            return store.state.allTfy;
+        }
+    },
+
+    mounted() {
+        store.commit('getAllTFY');
     }
 }
 </script>
