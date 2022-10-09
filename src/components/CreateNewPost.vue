@@ -1,7 +1,7 @@
 <template>
     <div class="cnp-container flex-row-start-start">
         <div class="profile-pic-section">
-            <img src="../assets/profile.jpg" alt="" class="post-profile-pic">
+            <img src="../assets/VugarSafarzada.jpg" alt="" class="post-profile-pic">
         </div>
         <div class="cnp-body">
             <div v-if="textAreaFocusTrigger" class="cnp-audience-section flex-row-space-around-center">

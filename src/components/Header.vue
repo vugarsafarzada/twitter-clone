@@ -46,7 +46,7 @@
             <div class="profile-settings">
                 <div class="profile-info">
                     <div class="user-pic-mini">
-                        <img src="../assets/profile.jpg" alt="">
+                        <img src="../assets/VugarSafarzada.jpg" alt="">
                     </div>
                     <div class=" user-name-nickname">
                         <div class="user-name text-heavy">VOYAGER</div>

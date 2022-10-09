@@ -31,10 +31,15 @@
 <script>
 import Header from "@/components/Header";
 import Sidebar from "@/components/Sidebar";
+import store from "@/store/index";
 
 export default {
     name: "MainLayout",
     components: { Header, Sidebar },
+    mounted() {
+        store.dispatch('getAllTFY');
+        store.dispatch('getAllWTF');
+    },
 }
 </script>
 

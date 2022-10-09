@@ -6,19 +6,23 @@ const data = [{
         user_info: {
             name: "VOYAGER",
             user_name: "@VugarSafarzada",
-            profilePic: "profile.jpg",
         },
     },
     {
         user_info: {
             name: "Elon Musk",
             user_name: "@elon_musk",
-            profilePic: "elon_musk.jpg",
+        },
+    },
+    {
+        user_info: {
+            name: "Jeff Bezos",
+            user_name: "@jeffBezos29",
         },
     },
 ];
 
-$userRouter.get("/:user_id", LOG, (req, res) => {
+$userRouter.get("/:user_id", (req, res) => {
     const findUser = data.find((item) => item.user_id === req.params.user_id);
     if (findUser) {
         res.status(200).send(findUser);
@@ -40,6 +44,15 @@ function LOG(req, res, next) {
         item["user_id"] = (
             item.user_info.name.replace(/ /g, "") + item.user_info.user_name
         ).toLowerCase();
+    });
+})();
+
+(function() {
+    data.forEach((item) => {
+        item.user_info["profilePic"] = `${item.user_info.user_name}.jpg`.replace(
+            /@/g,
+            ""
+        );
     });
 })();
 

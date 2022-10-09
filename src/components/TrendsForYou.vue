@@ -31,10 +31,6 @@ export default {
             return store.state.allTfy;
         }
     },
-
-    mounted() {
-        store.dispatch('getAllTFY');
-    }
 }
 </script>
 

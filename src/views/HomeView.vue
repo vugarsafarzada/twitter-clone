@@ -25,7 +25,7 @@ export default {
   },
   mounted() {
     store.dispatch('getAllPosts');
-  }
+  },
 }
 </script>
 

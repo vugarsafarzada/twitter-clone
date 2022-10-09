@@ -42,9 +42,6 @@ export default {
             return store.state.allWtf;
         }
     },
-    mounted() {
-        store.dispatch('getAllWTF');
-    },
     methods: {
         followRequest(id) {
             if (!this.followed.includes(id)) {
