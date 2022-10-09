@@ -43,7 +43,7 @@ export default {
         }
     },
     mounted() {
-        store.commit('getAllWTF');
+        store.dispatch('getAllWTF');
     },
     methods: {
         followRequest(id) {

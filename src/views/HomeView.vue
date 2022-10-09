@@ -20,11 +20,11 @@ export default {
   },
   computed: {
     posts() {
-      return store.getters.getAllPosts;
+      return store.state.allPosts;
     }
   },
   mounted() {
-    store.commit('getAllPostsAPI');
+    store.dispatch('getAllPosts');
   }
 }
 </script>

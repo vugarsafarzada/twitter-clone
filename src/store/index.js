@@ -10,32 +10,40 @@ export default new Vuex.Store({
         allTfy: [],
         allWtf: [],
     },
-    getters: {
-        getAllPosts: (state) => {
-            return state.allPosts;
-        },
-    },
+    getters: {},
     mutations: {
-        setPageTitle: function(state, value = "Twitter") {
+        setPageTitle(state, value = "Twitter") {
             document.title = value;
         },
-        async getAllPostsAPI(state) {
-            const res = await fetch(`${process.env.VUE_APP_API_URL}/api/post/all`);
-            const data = await res.json();
+        getAllPosts(state, data) {
             state.allPosts = data;
         },
-        async getAllTFY(state) {
-            const res = await fetch(`${process.env.VUE_APP_API_URL}/api/tfy/all-tfy`);
-            const data = await res.json();
+        getAllTFY(state, data) {
             state.allTfy = data;
         },
-        async getAllWTF(state) {
-            const res = await fetch(`${process.env.VUE_APP_API_URL}/api/wtf/all-wtf
-            `);
-            const data = await res.json();
+        getAllWTF(state, data) {
             state.allWtf = data;
         },
     },
-    actions: {},
+    actions: {
+        async getAllPosts(store) {
+            const data = await requestToAPI("/post/all");
+            store.commit("getAllPosts", data);
+        },
+        async getAllTFY(store) {
+            const data = await requestToAPI("/tfy/all-tfy");
+            store.commit("getAllTFY", data);
+        },
+        async getAllWTF(store) {
+            const data = await requestToAPI("/wtf/all-wtf");
+            store.commit("getAllWTF", data);
+        },
+    },
     modules: {},
 });
+
+async function requestToAPI(to) {
+    const res = await fetch(`${process.env.VUE_APP_API_URL}/api${to}`);
+    const data = await res.json();
+    return data;
+}

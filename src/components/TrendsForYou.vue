@@ -33,7 +33,7 @@ export default {
     },
 
     mounted() {
-        store.commit('getAllTFY');
+        store.dispatch('getAllTFY');
     }
 }
 </script>
